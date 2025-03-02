@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/locationSourceFragment">
+
+    <fragment
+        android:id="@+id/locationSourceFragment"
+        android:name="com.vks.locationtest.LocationSourceFragment"
+        android:label="@string/location_source"
+        tools:layout="@layout/fragment_location_source">
+
+        <action
+            android:id="@+id/toSearchPlaces"
+            app:destination="@id/searchPlacesFragment" />
+        <action
+            android:id="@+id/toRoute"
+            app:destination="@id/routeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPlacesFragment"
+        android:name="com.vks.locationtest.SearchPlacesFragment"
+        android:label="@string/location_source"
+        tools:layout="@layout/fragment_search_places">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/routeFragment"
+        android:name="com.vks.locationtest.RouteFragment"
+        android:label="@string/route"
+        tools:layout="@layout/fragment_route"></fragment>
+</navigation>
