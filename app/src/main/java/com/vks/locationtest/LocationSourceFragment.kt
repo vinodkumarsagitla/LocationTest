@@ -75,6 +75,7 @@ class LocationSourceFragment : Fragment() {
             findNavController().navigate(R.id.toSearchPlaces, bundle)
         }
         binding.route.setOnClickListener {
+            RouteFragment.list = adapter.list
             findNavController().navigate(R.id.toRoute)
         }
         binding.sort.setOnClickListener {

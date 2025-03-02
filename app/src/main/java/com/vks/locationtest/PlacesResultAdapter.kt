@@ -85,7 +85,6 @@ class PlacesResultAdapter(
         placesClient.findAutocompletePredictions(request)
             .addOnSuccessListener { response: FindAutocompletePredictionsResponse ->
                 result.addAll(response.autocompletePredictions)
-                Log.i(javaClass.name, "VKS *** ${result.size}")
                 onResult.invoke(result.size)
                 notifyDataSetChanged()
             }.addOnFailureListener { exception: Exception? ->

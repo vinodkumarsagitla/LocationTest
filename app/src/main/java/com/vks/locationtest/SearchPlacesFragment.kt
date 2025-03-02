@@ -40,7 +40,7 @@ class SearchPlacesFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var placesClient: PlacesClient
     private lateinit var viewModel: LocationViewModel
-    private var googleMaps: GoogleMap? = null
+    private var googleMap: GoogleMap? = null
     private lateinit var locationEntity: LocationEntity
     private var id: Int = 0
 
@@ -71,7 +71,7 @@ class SearchPlacesFragment : Fragment() {
         val supportMapFragment =
             binding.map.getFragment<SupportMapFragment>() as? SupportMapFragment?
         supportMapFragment?.getMapAsync { map ->
-            googleMaps = map
+            googleMap = map
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(22.0, 75.0), 4F))
         }
         if (id > 0)
@@ -79,9 +79,9 @@ class SearchPlacesFragment : Fragment() {
                 locationEntity = it
                 Handler(Looper.getMainLooper()).postDelayed({
                     val latLng = LatLng(it.latitude, it.longitude)
-                    googleMaps?.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14F))
+                    googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14F))
                     val marker = MarkerOptions().position(latLng).title(it.address)
-                    googleMaps?.addMarker(marker)?.showInfoWindow()
+                    googleMap?.addMarker(marker)?.showInfoWindow()
                 }, 2000)
                 binding.locationConfirm.isVisible = true
                 binding.save.text = getString(R.string.update)
@@ -100,9 +100,9 @@ class SearchPlacesFragment : Fragment() {
                 .addOnSuccessListener { response: FetchPlaceResponse ->
                     val place = response.place
                     val latLng = place.latLng
-                    googleMaps?.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14F))
+                    googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14F))
                     val marker = MarkerOptions().position(latLng).title(address.toString())
-                    googleMaps?.addMarker(marker)?.showInfoWindow()
+                    googleMap?.addMarker(marker)?.showInfoWindow()
                     locationEntity =
                         LocationEntity(
                             id,
