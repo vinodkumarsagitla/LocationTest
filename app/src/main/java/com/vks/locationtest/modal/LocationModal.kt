@@ -1,5 +1,4 @@
-package com.vks.locationtest
-
+package com.vks.locationtest.modal
 
 class LocationModal(
     val id: Int = 0,

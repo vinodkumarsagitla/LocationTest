@@ -1,4 +1,4 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -26,7 +26,10 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.api.net.FetchPlaceRequest
 import com.google.android.libraries.places.api.net.FetchPlaceResponse
 import com.google.android.libraries.places.api.net.PlacesClient
+import com.vks.locationtest.R
+import com.vks.locationtest.database.LocationEntity
 import com.vks.locationtest.databinding.FragmentSearchPlacesBinding
+import com.vks.locationtest.ui.adapter.PlacesResultAdapter
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

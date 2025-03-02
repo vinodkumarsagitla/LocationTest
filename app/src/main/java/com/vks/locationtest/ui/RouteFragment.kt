@@ -1,4 +1,4 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -24,7 +24,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.net.PlacesClient
+import com.vks.locationtest.R
 import com.vks.locationtest.databinding.FragmentRouteBinding
+import com.vks.locationtest.modal.LocationModal
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

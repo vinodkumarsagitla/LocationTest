@@ -1,10 +1,13 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.vks.locationtest.database.LocationEntity
 import com.vks.locationtest.databinding.LayoutLocationItemBinding
+import com.vks.locationtest.modal.LocationModal
 
 internal typealias OnDeleteClicked = (LocationEntity) -> Unit
 internal typealias OnEditClicked = (LocationEntity) -> Unit
@@ -29,13 +32,13 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ItemViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.bind(position, list[position], onDeleteClicked, onEditClicked)
+        holder.bind(list[position], onDeleteClicked, onEditClicked)
     }
 
     class ItemViewHolder(private val binding: LayoutLocationItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("DefaultLocale")
         fun bind(
-            position: Int,
             item: LocationModal,
             onDeleteClicked: OnDeleteClicked?,
             onEditClicked: OnEditClicked?

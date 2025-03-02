@@ -1,4 +1,4 @@
-package com.vks.locationtest
+package com.vks.locationtest.database
 
 import android.content.Context
 import androidx.room.Database

@@ -1,6 +1,8 @@
-package com.vks.locationtest
+package com.vks.locationtest.repository
 
 import androidx.lifecycle.LiveData
+import com.vks.locationtest.database.LocationDao
+import com.vks.locationtest.database.LocationEntity
 
 class LocationRepository(private val locationDao: LocationDao) {
 

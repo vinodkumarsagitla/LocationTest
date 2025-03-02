@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/locationSourceFragment"
-        android:name="com.vks.locationtest.LocationSourceFragment"
+        android:name="com.vks.locationtest.ui.LocationSourceFragment"
         android:label="@string/location_source"
         tools:layout="@layout/fragment_location_source">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchPlacesFragment"
-        android:name="com.vks.locationtest.SearchPlacesFragment"
+        android:name="com.vks.locationtest.ui.SearchPlacesFragment"
         android:label="@string/location_source"
         tools:layout="@layout/fragment_search_places">
         <argument
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/routeFragment"
-        android:name="com.vks.locationtest.RouteFragment"
+        android:name="com.vks.locationtest.ui.RouteFragment"
         android:label="@string/route"
         tools:layout="@layout/fragment_route"></fragment>
 </navigation>

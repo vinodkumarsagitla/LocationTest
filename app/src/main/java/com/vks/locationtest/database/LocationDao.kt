@@ -1,4 +1,4 @@
-package com.vks.locationtest
+package com.vks.locationtest.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

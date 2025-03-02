@@ -21,7 +21,8 @@
             android:orientation="horizontal"
             android:paddingEnd="56dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/name"

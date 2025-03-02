@@ -1,10 +1,12 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.vks.locationtest.database.LocationDatabase
+import com.vks.locationtest.database.LocationEntity
+import com.vks.locationtest.repository.LocationRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

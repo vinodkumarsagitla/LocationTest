@@ -1,4 +1,4 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui
 
 import android.location.Location
 import android.os.Bundle
@@ -10,7 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.vks.locationtest.R
+import com.vks.locationtest.database.LocationEntity
 import com.vks.locationtest.databinding.FragmentLocationSourceBinding
+import com.vks.locationtest.modal.LocationModal
+import com.vks.locationtest.ui.adapter.LocationAdapter
+import com.vks.locationtest.ui.dailog.DeleteConfirmDialog
+import com.vks.locationtest.ui.dailog.SortByBottomSheetDialog
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -60,6 +66,7 @@ class LocationSourceFragment : Fragment() {
             adapter.list = getLocations()
             binding.location.adapter = adapter
             binding.route.isVisible = it.size > 1
+            binding.sort.isVisible = it.size > 1
 
         }
         adapter.onDeleteClicked = {

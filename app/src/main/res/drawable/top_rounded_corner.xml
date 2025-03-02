@@ -2,6 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/color_toolbar" />
     <corners
-        android:topLeftRadius="6dp"
-        android:topRightRadius="6dp" />
+        android:topLeftRadius="12dp"
+        android:topRightRadius="12dp" />
 </shape>

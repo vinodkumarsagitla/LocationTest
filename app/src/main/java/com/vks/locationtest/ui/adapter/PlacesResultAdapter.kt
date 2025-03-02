@@ -1,5 +1,6 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRe
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsResponse
 import com.google.android.libraries.places.api.net.PlacesClient
 import com.google.android.material.textview.MaterialTextView
+import com.vks.locationtest.R
 
 class PlacesResultAdapter(
     private val mContext: Context,
@@ -60,10 +62,8 @@ class PlacesResultAdapter(
             override fun performFiltering(constraint: CharSequence): FilterResults {
                 val results = FilterResults()
                 mResultList = getPredictions(constraint)
-                if (mResultList != null) {
-                    results.values = mResultList
-                    results.count = mResultList!!.size
-                }
+                results.values = mResultList
+                results.count = mResultList!!.size
                 return results
             }
 
@@ -73,7 +73,8 @@ class PlacesResultAdapter(
         }
     }
 
-    private fun getPredictions(constraint: CharSequence): ArrayList<AutocompletePrediction>? {
+    @SuppressLint("NotifyDataSetChanged")
+    private fun getPredictions(constraint: CharSequence): ArrayList<AutocompletePrediction> {
         val result: ArrayList<AutocompletePrediction> = arrayListOf()
         val token = AutocompleteSessionToken.newInstance()
         val request =

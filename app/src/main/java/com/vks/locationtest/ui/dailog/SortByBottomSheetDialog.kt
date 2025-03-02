@@ -1,4 +1,4 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui.dailog
 
 import android.app.Dialog
 import android.os.Bundle
@@ -11,6 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
+import com.vks.locationtest.R
 
 internal typealias OnApplyClicked = (Int) -> Unit
 internal typealias OnClearClicked = () -> Unit

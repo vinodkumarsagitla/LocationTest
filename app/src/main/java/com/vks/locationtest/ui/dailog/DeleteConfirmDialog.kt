@@ -1,17 +1,12 @@
-package com.vks.locationtest
+package com.vks.locationtest.ui.dailog
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RadioButton
 import androidx.fragment.app.DialogFragment
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
+import com.vks.locationtest.R
 
 class DeleteConfirmDialog : DialogFragment() {
     var onOkClicked: OnClearClicked? = null
