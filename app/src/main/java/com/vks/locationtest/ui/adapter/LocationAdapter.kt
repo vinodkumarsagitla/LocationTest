@@ -1,8 +1,11 @@
 package com.vks.locationtest.ui.adapter
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.MarginLayoutParams
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.vks.locationtest.database.LocationEntity
@@ -33,6 +36,12 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ItemViewHolder>() {
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(list[position], onDeleteClicked, onEditClicked)
+        val params = holder.itemView.layoutParams as MarginLayoutParams
+        params.topMargin = if (position == 0) holder.itemView.dip(12)
+        else holder.itemView.dip(6)
+        params.bottomMargin = if (position == list.size - 1) holder.itemView.dip(60)
+        else holder.itemView.dip(6)
+        holder.itemView.layoutParams = params
     }
 
     class ItemViewHolder(private val binding: LayoutLocationItemBinding) :
@@ -59,3 +68,9 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ItemViewHolder>() {
 }
 
 fun LocationModal.toEntity() = LocationEntity(id, placeId, name, address, latitude, longitude)
+
+fun View.dip(value: Int): Int = context.dip(value)
+
+fun Context.dip(value: Int): Int = (value * resources.displayMetrics.density).toInt()
+
+
